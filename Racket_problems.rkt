@@ -19,13 +19,18 @@
 ; (f) (3+5)×(10÷2)+(1+(5+(2+(10÷3))))
 ( + ( * ( + 3 5) ( / 10 2)) ( + 1 ( + 5 ( + 2 ( / 10 3)))))
 
+
+
 ; 2. Define a procedure discount that takes two arguments: an item’s initial price and a percentage discount [2]. It should return the new price:
 ; > (discount 10 5)  ==> 9.50
 
 (define (discount price discount)
-  ( - price ( * price discount 0.01)))
+  ( * price (- 1.0 ( * discount 0.01))))
 
 (discount 10 5)
+(discount 29.9 50)
+
+
 
 ; 3. Define a function grcomdiv that takes two integers and returns their greatest common divisor.
 ; > (grcomdiv 10 15)  ==> 5
@@ -39,4 +44,12 @@
 
 (grcomdiv 10 15)
 
+
+
+; 4. Write a function called appearances that returns the number of times its first argu- ment appears as a member of its second argument [2].
+
+
+
+
+; 5. Write a procedure inter that takes two lists as arguments. It should return a list containing every element that appears in both lists, exactly once.
 
